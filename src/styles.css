@@ -17,3 +17,12 @@ html {
     font-size: 7rem;
     margin-top: 5rem;
 }
+
+#quote-box {
+    display: block;
+    border-style: double;
+    border-width: 0.75rem;
+    border-color: lightskyblue;
+    margin: 5% 10% 10% 10%;
+    padding: 10% 10% 10% 10%;
+}
