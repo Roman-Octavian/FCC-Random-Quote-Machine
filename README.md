@@ -4,7 +4,7 @@ This is the first project included in the *freeCodeCamp* **Front End Development
 
 ## Project Link
 
-### [https://roman-octavian.github.io/FCC-Random-Quote-Machine/](Select this URL to visit the website)
+### [Select this URL to visit the website](https://roman-octavian.github.io/FCC-Random-Quote-Machine/)
 
 ---
 
@@ -16,3 +16,11 @@ This is the first project included in the *freeCodeCamp* **Front End Development
     - ReactJS
     - Bootstrap
     - SASS
+
+### Branch Descriptions:
+
+- main: 
+Features the "raw" files before going through production.
+
+- gh-pages:
+Features transpiled files optimized for performance. The GitHub pages website is based on this branch.

@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
     <div>
-        <h1 className="red-text">Hello ReactJS!</h1>
+        <h1 className="red-text">Hello ReactJS built twice!</h1>
     </div>,
     document.getElementById("root")
 )
