@@ -12,6 +12,8 @@ html {
     scroll-behavior: smooth;
 }
 
-h1 {
-    margin-left: 5rem;
+
+.text-primary {
+    font-size: 7rem;
+    margin-top: 5rem;
 }

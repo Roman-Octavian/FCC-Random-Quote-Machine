@@ -4,8 +4,8 @@ import './styles.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
-    <div>
-        <h1 className="red-text">Hello ReactJS built twice!</h1>
+    <div className="container-fluid">
+        <h1 className="text-primary text-center">Hello ReactJS!</h1>
     </div>,
     document.getElementById("root")
 )
