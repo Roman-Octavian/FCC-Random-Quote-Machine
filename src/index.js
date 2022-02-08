@@ -3,21 +3,28 @@ import ReactDOM from "react-dom";
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-class QuoteBox extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-        <wrapper id="quote-box" className="text-center">
-            <Text />
-            <Author />
-            <NewQuoteButton />
-            <TweetQuote />
-        </wrapper>
-        );
-    }
-}
+//This is less than ideal, but I should not fetch random quotes remotely because this course does not cover APIs
+const QUOTE_BANK = [
+    {quote: "1", author: "a"}, {quote: "2", author: "b"}, {quote: "3", author: "c"}, {quote: "4", author: "d"},
+    {quote: "5", author: "e"}, {quote: "6", author: "f"}, {quote: "7", author: "g"}, {quote: "8", author: "h"},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
+    {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}
+];
+
+
+
 
 class Text extends React.Component {
     constructor(props) {
@@ -25,7 +32,7 @@ class Text extends React.Component {
     }
     render() {
         return (
-            <h1 id="text" className="text-primary">A quote goes here</h1>
+            <h1 id="text" className="text-primary">{this.props.text}</h1>
         );
     }
 }
@@ -36,25 +43,11 @@ class Author extends React.Component {
     }
     render() {
         return (
-            <h2 id="author">An author goes here</h2>
+            <h2 id="author">{this.props.author}</h2>
         )
     }
 }
 
-class NewQuoteButton extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <button type="button" id="new-quote" className="btn btn-primary">New Quote</button>
-        )
-    }
-}
-
-const tweetIcon = (
-    <i id="fas fa-thumbs-up"></i>
-)
 class TweetQuote extends React.Component {
     constructor(props) {
         super(props);
@@ -63,16 +56,65 @@ class TweetQuote extends React.Component {
         return (
             <a href="https://twitter.com/intent/tweet" id="tweet-quote">
                 <button type="button" className="btn btn-outline-primary">
-                    <i class="fab fa-twitter"></i> Tweet
+                    <i className="fab fa-twitter"></i> Tweet
                 </button>
             </a>
         )
     }
 }
 
+const firstQuote = QUOTE_BANK[Math.floor(Math.random() * 8)];
+
+class QuoteBox extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            quoteText: firstQuote.quote,
+            quoteAuthor: firstQuote.author
+        }
+    }
+
+    handleClick = () => {
+        while (true) {
+            let newQuote = QUOTE_BANK[Math.floor(Math.random() * 8)];
+            if (newQuote.quote != this.state.quoteText) {
+                this.setState({
+                    quoteText: newQuote.quote,
+                    quoteAuthor: newQuote.author
+                });
+                break;
+            }
+            console.log("repeated")
+        }
+    }
+
+    render() {
+        return (
+        <wrapper id="quote-box" className="text-center">
+            <Text text={this.state.quoteText }/>
+            <Author author={this.state.quoteAuthor} />
+            <button type="button" id="new-quote" onClick={this.handleClick} className="btn btn-primary">New Quote</button>
+            <TweetQuote />
+        </wrapper>
+        ); 
+    }
+}
+
+class RootComponent extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div id="root-div" className="container-fluid">
+                <QuoteBox />
+            </div>
+        );
+    }
+}
+
+
 ReactDOM.render(
-    <div className="container-fluid">
-        <QuoteBox />
-    </div>,
+    <RootComponent />,
     document.getElementById("root")
 )
