@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 const QUOTE_BANK = [
     {quote: "The only true wisdom is in knowing you know nothing.", author: "Socrates"}, {quote: "The unexamined life is not worth living.", author: "Socrates"}, {quote: "Be kind, for everyone you meet is fighting a hard battle.", author: "Socrates"}, {quote: "Know thyself.", author: "Socrates"},
     {quote: "Educating the mind without educating the heart is no education at all.", author: "Aristotle"}, {quote: "It is the mark of an educated mind to be able to entertain a thought without accepting it.", author: "Aristotle"}, {quote: "Knowing yourself is the beginning of all wisdom.", author: "Aristotle"}, {quote: "The worst form of inequality is to try to make unequal things equal.", author: "Aristotle"},
-    {quote: "Yo soy yo y mi circunstancia.", author: "José Ortega y Gasset"}, {quote: "I am I and my circumstance; and, if I do not save it, I do not save myself.", author: "José Ortega y Gasset"}, {quote: "Tell me what you pay attention to and I will tell you who you are.", author: "José Ortega y Gasset"}, {quote: "To remain in the past means to be dead.", author: "José Ortega y Gasset"},
+    {quote: "I am I and my circumstances.", author: "José Ortega y Gasset"}, {quote: "I am I and my circumstance; and, if I do not save it, I do not save myself.", author: "José Ortega y Gasset"}, {quote: "Tell me what you pay attention to and I will tell you who you are.", author: "José Ortega y Gasset"}, {quote: "To remain in the past means to be dead.", author: "José Ortega y Gasset"},
     {quote: "Tell me and I forget. Teach me and I remember. Involve me and I learn.", author: "Benjamin Franklin"}, {quote: "Love your Enemies, for they tell you your Faults.", author: "Benjamin Franklin"}, {quote: "There never was a good war or a bad peace.", author: "Benjamin Franklin"}, {quote: "Well done is better than well said.", author: "Benjamin Franklin"},
     {quote: "It does not matter how slowly you go so long as you do not stop.", author: "Confucius"}, {quote: "I hear and I forget. I see and I remember. I do and I understand.", author: "Confucius"}, {quote: "Do not impose on others what you yourself do not desire.", author: "Confucius"}, {quote: "Before you embark on a journey of revenge, dig two graves.", author: "Confucius"},
     {quote: "Do unto others as you would have them do unto you.", author: "Jesus of Nazareth"}, {quote: "For everyone who exalts himself will be humbled, and everyone who humbles himself will be exalted.", author: "Jesus of Nazareth"}, {quote: "Let the one among you who is without sin be the first to cast a stone.", author: "Jesus of Nazareth"}, {quote: "Thou shalt love thy neighbour as thyself.", author: "Jesus of Nazareth"},
@@ -70,7 +70,7 @@ class QuoteBox extends React.Component {
     }
 
     handleTweet = () => {
-        document.getElementById("tweet-quote").setAttribute("href", "https://twitter.com/intent/tweet?text=" + '"' + this.state.quoteText.replace(/\s/g, "%20") + '"' + " — " + this.state.quoteAuthor);
+        document.getElementById("tweet-quote").setAttribute("href", "https://twitter.com/intent/tweet?text=" + '"' + this.state.quoteText.replace(/\s/g, "%20") + '"' + "%20—%20" + this.state.quoteAuthor.replace(/\s/g, "%20"));
     }
 
     render() {
@@ -78,9 +78,8 @@ class QuoteBox extends React.Component {
         <wrapper id="quote-box" className="text-center">
             <Text text={this.state.quoteText }/>
             <Author author={this.state.quoteAuthor} />
-            <button type="button" id="new-quote" onClick    ={this.handleClick} className="btn btn-primary">New Quote</button>
-
-            <a href="#" target="_blank" id="tweet-quote">
+            <button type="button" id="new-quote" onClick={this.handleClick} className="btn btn-primary">New Quote</button>
+            <a href="https://twitter.com/intent/tweet" target="_blank" id="tweet-quote">
                 <button type="button" onClick={this.handleTweet} className="btn btn-outline-primary">
                     <i className="fab fa-twitter"></i> Tweet
                 </button>
