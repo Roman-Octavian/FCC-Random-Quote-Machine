@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 //This is less than ideal, but I should not fetch random quotes remotely because this course does not cover APIs
 const QUOTE_BANK = [
-    {quote: "1", author: "a"}, {quote: "2", author: "b"}, {quote: "3", author: "c"}, {quote: "4", author: "d"},
+    {quote: "Bro don't worry we can just use a Python script for this and everything will be fine", author: "Bartosz Byriloofiafasofas"}, {quote: "2", author: "b"}, {quote: "3", author: "c"}, {quote: "4", author: "d"},
     {quote: "5", author: "e"}, {quote: "6", author: "f"}, {quote: "7", author: "g"}, {quote: "8", author: "h"},
     {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
     {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
@@ -22,9 +22,6 @@ const QUOTE_BANK = [
     {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""},
     {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}, {quote: "", author: ""}
 ];
-
-
-
 
 class Text extends React.Component {
     constructor(props) {
@@ -44,21 +41,6 @@ class Author extends React.Component {
     render() {
         return (
             <h2 id="author">{this.props.author}</h2>
-        )
-    }
-}
-
-class TweetQuote extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <a href="https://twitter.com/intent/tweet" id="tweet-quote">
-                <button type="button" className="btn btn-outline-primary">
-                    <i className="fab fa-twitter"></i> Tweet
-                </button>
-            </a>
         )
     }
 }
@@ -84,8 +66,11 @@ class QuoteBox extends React.Component {
                 });
                 break;
             }
-            console.log("repeated")
         }
+    }
+
+    handleTweet = () => {
+        document.getElementById("tweet-quote").setAttribute("href", "https://twitter.com/intent/tweet?text=" + '"' + this.state.quoteText.replace(/\s/g, "%20") + '"' + " — " + this.state.quoteAuthor);
     }
 
     render() {
@@ -93,10 +78,15 @@ class QuoteBox extends React.Component {
         <wrapper id="quote-box" className="text-center">
             <Text text={this.state.quoteText }/>
             <Author author={this.state.quoteAuthor} />
-            <button type="button" id="new-quote" onClick={this.handleClick} className="btn btn-primary">New Quote</button>
-            <TweetQuote />
+            <button type="button" id="new-quote" onClick    ={this.handleClick} className="btn btn-primary">New Quote</button>
+
+            <a href="#" target="_blank" id="tweet-quote">
+                <button type="button" onClick={this.handleTweet} className="btn btn-outline-primary">
+                    <i className="fab fa-twitter"></i> Tweet
+                </button>
+            </a>
         </wrapper>
-        ); 
+        );
     }
 }
 
