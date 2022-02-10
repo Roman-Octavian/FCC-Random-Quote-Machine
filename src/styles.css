@@ -49,7 +49,6 @@ html {
     width: 60%;
     height: 60vh;
     padding: 0 2vw 0 2vw;
-    backdrop-filter: blur(6px);
 }
 
 #buttons-div {
@@ -57,9 +56,30 @@ html {
     display: flex;
     width: 20vw;
     justify-content:space-evenly;
-    margin-top:4vw;
+    margin-top:2vw;
 }
 button {
     width: 7vw;
     height: 5vh;
+}
+
+@media only screen and (min-width: 1px) and (max-width: 600px) {
+    #quote-box {
+        width: 90%;
+        height: 35vh;
+        padding: 0 2vw 0 2vw;
+    }
+
+    .text-primary {
+        font-size: 5vw;
+    }
+
+    #author {
+        font-size: 4vw;
+    }
+
+    button {
+        width: 25vw;
+        height: 4vh;
+    }
 }
