@@ -12,15 +12,14 @@ This is the first project included in the *freeCodeCamp* **Front End Development
 
 - HTML
 - CSS
+    - Bootstrap
 - JavaScript
     - ReactJS
-    - Bootstrap
-    - SASS
 
 ### Branch Descriptions:
 
 - main: 
-Features the "raw" files before going through production.
+Features the "raw" files before deployment.
 
 - gh-pages:
 Features transpiled files optimized for performance. The GitHub pages website is based on this branch.
