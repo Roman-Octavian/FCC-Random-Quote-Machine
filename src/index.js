@@ -29,7 +29,7 @@ class Text extends React.Component {
     }
     render() {
         return (
-            <h1 id="text" className="text-primary">"{this.props.text}"</h1>
+            <h1 id="text">"{this.props.text}"</h1>
         );
     }
 }
@@ -76,11 +76,11 @@ class QuoteBox extends React.Component {
     render() {
         return (
         <wrapper id="quote-box" className="text-center">
-            <Text text={this.state.quoteText }/>
+            <Text text={this.state.quoteText } />
             <Author author={this.state.quoteAuthor} />
             <div id="buttons-div">
                 <div id="quote-button">
-                    <button type="button" id="new-quote" onClick={this.handleClick} className="btn btn-outline-primary">New Quote</button>
+                    <button type="button" id="new-quote" onClick={this.handleClick} className="btn btn-outline-info">New Quote</button>
                 </div>
                 <div id="tweet-button">
                     <a href="https://twitter.com/intent/tweet" target="_blank" id="tweet-quote">

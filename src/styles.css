@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 :root {
     font-size: 62.5%;
@@ -13,19 +13,28 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-
-.text-primary {
+#text {
     font-family: "Montserrat", Arial;
     font-size: 3vw;
-    color: white;
+    color: rgb(13, 202, 240);
+    background: -webkit-linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #author {
-    font-family: "Great Vibes", Helvetica;
+    font-family: "Kaushan Script", Helvetica;
     font-size: 2vw;
     margin-top: 2vh;
+    color: rgb(13, 202, 240);
+    background: -webkit-linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #root-div {
@@ -34,7 +43,7 @@ html {
     align-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
 }
 
 #quote-box {
@@ -58,6 +67,7 @@ html {
     justify-content:space-evenly;
     margin-top:2vw;
 }
+
 button {
     width: 7vw;
     height: 5vh;
@@ -82,4 +92,5 @@ button {
         width: 25vw;
         height: 4vh;
     }
+
 }
