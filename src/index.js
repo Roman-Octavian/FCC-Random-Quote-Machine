@@ -29,7 +29,7 @@ class Text extends React.Component {
     }
     render() {
         return (
-            <h1 id="text" className="text-primary">{this.props.text}</h1>
+            <h1 id="text" className="text-primary">"{this.props.text}"</h1>
         );
     }
 }
@@ -40,7 +40,7 @@ class Author extends React.Component {
     }
     render() {
         return (
-            <h2 id="author">{this.props.author}</h2>
+            <h2 id="author">— {this.props.author}</h2>
         )
     }
 }
@@ -78,12 +78,18 @@ class QuoteBox extends React.Component {
         <wrapper id="quote-box" className="text-center">
             <Text text={this.state.quoteText }/>
             <Author author={this.state.quoteAuthor} />
-            <button type="button" id="new-quote" onClick={this.handleClick} className="btn btn-primary">New Quote</button>
-            <a href="https://twitter.com/intent/tweet" target="_blank" id="tweet-quote">
-                <button type="button" onClick={this.handleTweet} className="btn btn-outline-primary">
-                    <i className="fab fa-twitter"></i> Tweet
-                </button>
-            </a>
+            <div id="buttons-div">
+                <div id="quote-button">
+                    <button type="button" id="new-quote" onClick={this.handleClick} className="btn btn-outline-primary">New Quote</button>
+                </div>
+                <div id="tweet-button">
+                    <a href="https://twitter.com/intent/tweet" target="_blank" id="tweet-quote">
+                        <button type="button" onClick={this.handleTweet} className="btn btn-outline-info">
+                            <i className="fab fa-twitter"></i> Tweet
+                        </button>
+                    </a>
+                </div>
+            </div>
         </wrapper>
         );
     }
