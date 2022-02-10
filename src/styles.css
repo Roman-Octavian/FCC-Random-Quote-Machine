@@ -81,7 +81,7 @@ button {
     }
 
     #text {
-        font-size: 5vw;
+        font-size: 6vw;
     }
 
     #author {
@@ -93,4 +93,31 @@ button {
         height: 4vh;
     }
 
+    #buttons-div {
+        width: 65vw;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    #quote-box {
+        width: 80%;
+        height: 55vh;
+        padding: 0 2vw 0 2vw;
+    }
+
+    #text {
+        font-size: 5vw;
+    }
+
+    #author {
+        font-size: 4vw;
+    }
+
+    button {
+        width: 15vw;
+        height: 6vh;
+    }
+    #buttons-div {
+        width: 40vw;
+    }
 }
