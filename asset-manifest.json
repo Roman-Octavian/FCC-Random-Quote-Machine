@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/FCC-Random-Quote-Machine/static/css/main.6555b905.css",
+    "main.css": "/FCC-Random-Quote-Machine/static/css/main.217fa18b.css",
     "main.js": "/FCC-Random-Quote-Machine/static/js/main.4348ab8b.js",
     "index.html": "/FCC-Random-Quote-Machine/index.html",
-    "main.6555b905.css.map": "/FCC-Random-Quote-Machine/static/css/main.6555b905.css.map",
+    "main.217fa18b.css.map": "/FCC-Random-Quote-Machine/static/css/main.217fa18b.css.map",
     "main.4348ab8b.js.map": "/FCC-Random-Quote-Machine/static/js/main.4348ab8b.js.map"
   },
   "entrypoints": [
-    "static/css/main.6555b905.css",
+    "static/css/main.217fa18b.css",
     "static/js/main.4348ab8b.js"
   ]
 }
